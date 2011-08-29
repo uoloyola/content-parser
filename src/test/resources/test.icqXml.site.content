@@ -1,0 +1,418 @@
+# This file creates a Test icq Xml Site with sub content.
+# test.icqXml.site can be a starting point for tests of the icqxml
+
+id:test.icqXml.site
+inputtemplate:np.it.icqXml.Site
+securityparent:p.siteengine.Sites.d
+name:icq Xml Test Site
+component:domainAlias:mainAlias:http\://localhost\:8080/icqtest
+ref:pageLayout:selected:np.it.IcqXml.Site.PageLayout
+list:.formatPage
+list:.formatPage.2
+list:.formatPage.3
+list:.formatPage.4
+list:.formatPage.5
+list:.formatPage.6
+list:.formatPage.7
+list:.formatPage.8
+
+
+
+### Format Pages ###
+# Format page 1
+id:.formatPage
+inputtemplate:np.it.icqXml.FormatPage
+securityparent:test.icqXml.site
+name:icq Xml Test Format Page
+list:images:np.ct.import.test.terminator.image
+list:background-image:image.yummy.in.my.tummy
+list:.videoClipListGroup.single.2
+list:links:.external.link.1
+list:links:.external.link.2
+
+# Format page 2
+id:.formatPage.2
+template:.formatPage
+name:icq Test Format ä ö ü < > & " '
+
+# Format page 3
+id:.formatPage.3
+template:.formatPage
+name:icq Xml Test Format Page 3
+
+# More Format pages
+id:.formatPage.4
+template:.formatPage
+name:icq Xml Test Format Page 4
+
+id:.formatPage.5
+template:.formatPage
+name:icq Xml Test Format Page 5
+list:images:image.yummy.in.my.tummy
+
+id:.formatPage.6
+template:.formatPage
+name:icq Xml Test Format Page 6
+
+id:.formatPage.7
+template:.formatPage
+name:icq Xml Test Format Page 7
+
+id:.formatPage.8
+template:.formatPage
+name:icq Xml Test Format Page 8
+component:sponsor_logo_id:value:Test example sponsor_logo_id
+component:preroll_video_id:value:Test example preroll_video_id
+component:sponsor_video_id:value:Test example sponsor_video_id
+list:.videoClipListGroup.single.huge
+
+
+
+
+### Video Cliplist Groups ###
+id:.videoClipListGroup.single.1
+inputtemplate:np.it.field.clipListGroup
+securityparent:.formatPage
+name:Video Group Single 1
+list:.manualVideoPQ
+
+id:.videoClipListGroup.single.huge
+inputtemplate:np.it.field.clipListGroup
+securityparent:.formatPage.8
+name:Video Group Single Huge
+list:.manualVideoPQ.huge
+
+id:.videoClipListGroup.group.1
+template:.videoClipListGroup.single.1
+name:Video Group Group ä ö ü < > & " '
+list:.manualVideoPQ
+list:.manualVideoPQ.empty
+list:.searchVideoPQ
+
+id:.videoClipListGroup.single.2
+template:.videoClipListGroup.single.1
+name:Video Group Single 2
+list:.manualVideoPQ.2
+
+
+### Image ###
+id:image.yummy.in.my.tummy
+inputtemplate:np.it.module.Image
+securityparent:np.ct.prosieben.de.d
+name:Germ Knodel
+component:author:value:Test example author
+component:caption:value:Test example Caption
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Image
+component:moduleMetadata/friendlyURL:value:test-image-noc
+component:p.ImageManager/namespaces:httpImage:httpImage
+component:p.ImageManager/namespaces:image:image
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+file:GermKnodel.jpg:files/GermKnodel.jpg
+
+
+### Video PQs ###
+# Video player pages are coming from: test.videoPlayerPages.content
+id:.manualVideoPQ.empty
+inputtemplate:np.it.pq.manual.bigTeaser
+securityparent:.
+name:icq Xml Test Video Manual Empty PQ
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Empty Video PQ
+component:moduleMetadata/newsdate:date:1283164181353
+
+id:.manualVideoPQ
+template:.manualVideoPQ.empty
+name:icq Xml Test Video Manual PQ
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Manual Video PQ
+component:moduleMetadata/newsdate:date:1283164181453
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+
+id:.manualVideoPQ.2
+template:.manualVideoPQ.empty
+name:icq Xml Test Video Manual PQ 2
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Manual Video PQ
+component:moduleMetadata/newsdate:date:1283164180453
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.1
+
+id:.searchVideoPQ
+inputtemplate:np.it.pq.search.videopageplayer
+securityparent:.
+name:icq Xml Test Video Search PQ
+component:sortOrder:value:de.netpioneer.sim.collection.search.SearchResultSorterCreationTime
+component:timeSpan:value:180
+component:default/lock:value:false
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Video Search PQ
+list:categorization[np.catdimension.brand]:np.cat.brand.prosieben
+
+
+id:.manualVideoPQ.huge
+template:.manualVideoPQ.empty
+name:icq Xml Test HUGE Manual PQ
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+list:test.videoPlayerPages.prosieben.3
+
+
+
+
+
+#####################################################################
+# test for clips
+
+# department
+id:.formatPage.videoclipoverviewformat
+inputtemplate:p.siteengine.Page
+securityparent:np.ct.prosieben.de.d
+name:Video Clip Overview Format Test Department
+ref:pageLayout:selected:np.it.VideoPageOverviewFormatLayout
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+list:moduleMetadata/taxonomy[np.catdimension.contentindex]:np.cat.contentindex.tv.Serie.Comedy.Malcom
+
+# group
+id:.videoClipListGroup.videoClipOverview
+inputtemplate:np.it.field.clipListGroup
+securityparent:.formatPage.8
+name:Video clip overview group
+list:.test.videoClipOverview
+
+# VPP
+id:test.videoplayerpage.VideoClipOverviewTest.1
+inputtemplate:np.it.module.VideoPlayerPage
+name:Video Player Page Clip Test
+# publizieren / workflow setzen
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+list:moduleMetadata/taxonomy[np.catdimension.contentindex]:np.cat.contentindex.tv.Serie.Comedy.Malcom
+list:moduleMetadata/taxonomy[np.catdimension.infotyp]:np.cat.infotyp.shortClip
+list:moduleMetadata/taxonomy[np.catdimension.mediatyp]:np.cat.mediatyp.videoplayerpage
+
+id:test.videoplayerpage.VideoClipOverviewTest.2
+template:test.videoplayerpage.VideoClipOverviewTest.1
+name:Video Player Page Clip Test 2
+
+id:test.videoplayerpage.VideoClipOverviewTest.3
+template:test.videoplayerpage.VideoClipOverviewTest.1
+name:Video Player Page Clip Test 3
+
+id:test.videoplayerpage.VideoClipOverviewTest.4
+template:test.videoplayerpage.VideoClipOverviewTest.1
+name:Video Player Page Clip Test 4
+
+id:.external.link.1
+inputtemplate:np.it.module.link.External
+securityparent:test.icqXml.site.formatPage
+component:href:value:http\://www.funnyurl.nu
+component:linktype:subField:linktype_inline
+component:polopoly.Content:name:The first link
+ref:polopoly.Content:inputTemplateId:np.it.module.link.External
+
+id:.external.link.2
+template:.external.link.1
+component:href:value:http\://www.NotSoFunnyUrl.nu
+component:polopoly.Content:name:The second link
+# videoClipOverview
+id:.test.videoClipOverview
+securityparent:.formatPage.videoclipoverviewformat
+inputtemplate:np.it.module.VideoclipOverview
+component:videoclipsformat:selected:SHORT

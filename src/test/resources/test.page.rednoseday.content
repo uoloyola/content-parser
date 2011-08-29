@@ -1,0 +1,106 @@
+# defining a test format page with alternative navigation (overall brand)
+id:.
+inputtemplate:p.siteengine.Page
+securityparent:np.ct.prosieben.de.sendungen.d
+name:Red Nose Day Test Format Page
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Red Nose Day Test Format Page
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.Flexible2ColumnPageLayout
+publish:np.ct.prosieben.de.sendungen.d
+component:overallbrandcheckbox:value:true
+component:overallbrandCss:value:http\://www.prosieben.de/static/formatweltresourcen/css/overalltvstations.css
+list:overallbranditems:.navigationitem.1
+list:overallbranditems:.navigationitem.2
+list:overallbranditems:.navigationitem.3
+list:overallbranditems:.navigationitem.4
+
+# defining a test format page which is a child of the test format page with alternative navigation (overall brand)
+# navigation should be inherited
+id:.childDepartment
+inputtemplate:p.siteengine.Page
+securityparent:.
+name:Red Nose Day Test Format Page Child
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Red Nose Day Test Format Page Child
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.Flexible2ColumnPageLayout
+publish:.
+component:overallbrandcheckbox:value:false
+
+# defining a test format page which is a child of the test format page with alternative navigation (overall brand)
+# navigation should be inherited even if own brand navigation is defined for the page (first department wins).
+id:.childDepartment.overall.enabled
+inputtemplate:p.siteengine.Page
+securityparent:.
+name:Red Nose Day Test Format Page Child 2
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Red Nose Day Test Format Page Child 2
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.Flexible2ColumnPageLayout
+publish:.
+component:overallbrandcheckbox:value:true
+
+# defining a test format page with normal navigation (overall brand)
+id:.normalnavigation
+template:.
+name:Test Format Page Normal Navigation
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Format Page Normal Navigation
+component:overallbrandcheckbox:value:false
+publish:np.ct.prosieben.de.sendungen.d
+
+# defining brand items for the alternative navigation
+
+id:.navigationitem.1
+inputtemplate:np.it.module.overallbrand.navigation
+securityparent:np.ct.prosieben.de.sendungen.d
+name:prosieben
+component:overallbrandcheckbox:value:true
+component:brand:overallbrandurl:http\://www.prosieben.de
+component:brand:overallbrandlogowidth:32
+component:brand:overallbrandlogoheight:32
+component:brand:overallbrandlogoalt:Prosieben Logo
+component:brand:overallbrandlogotitle:zur Prosiebenseite
+
+id:.navigationitem.2
+inputtemplate:np.it.module.overallbrand.navigation
+securityparent:np.ct.prosieben.de.sendungen.d
+name:sat1
+component:overallbrandcheckbox:value:false
+component:brand:overallbrandurl:http\://www.sat1.de
+component:brand:overallbrandlogowidth:104
+component:brand:overallbrandlogoheight:32
+component:brand:overallbrandlogoalt:Sat1 Logo
+component:brand:overallbrandlogotitle:zur Sat1-Seite
+
+id:.navigationitem.3
+inputtemplate:np.it.module.overallbrand.navigation
+securityparent:np.ct.prosieben.de.sendungen.d
+name:kabel1
+component:overallbrandcheckbox:value:true
+component:brand:overallbrandurl:http\://www.kabel1.de
+component:brand:overallbrandlogowidth:39
+component:brand:overallbrandlogoheight:32
+component:brand:overallbrandlogoalt:Kabel1 Logo
+component:brand:overallbrandlogotitle:zur Kabel1-Seite
+
+id:.navigationitem.4
+inputtemplate:np.it.module.overallbrand.navigation
+securityparent:np.ct.prosieben.de.sendungen.d
+name:sixx
+component:overallbrandcheckbox:value:true
+component:brand:overallbrandurl:http\://www.sixx.de
+component:brand:overallbrandlogowidth:88
+component:brand:overallbrandlogoheight:32
+component:brand:overallbrandlogoalt:SIXX Logo
+component:brand:overallbrandlogotitle:zur Sixx-Seite
+

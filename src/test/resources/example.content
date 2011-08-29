@@ -1,0 +1,112 @@
+# This is a comment
+
+# This files is an example of how to create content in the .content format. Here we create two teasers.
+
+# Note that the format used is identical to the output of pcmd inspect. Use that to see syntax. 
+
+# _TIPS_
+# - Within the same .content file you can cross-refererence everything without problem.
+# - Colon ":" can be escaped with \
+# - Use Properties file editor or similar in Eclipse
+
+
+# An example Teaser --------------------------------------------------
+
+# ExternalId 
+# Must come first for each content
+# If value starts with ".", the resulting ExternalId will be: <fileNameWithoutExtension> + <externalId>. 
+# This applies to all external id references
+id:content-example-teaser-externalid
+
+# Major 
+# Optional. If not given it's taken from input-template  
+# Numeric ("7") or String ("layoutelement") representation
+major:7
+
+# Input-template 
+inputtemplate:np.it.layout.Teaser
+
+# Security parent - Prosieben.de site
+securityparent:np.ct.prosieben.de.d
+
+# Components 
+# component:<group>:<name>:<value> 
+# For single value fields such as p.TextInput this is "component:<field_name>:value:<value>"
+component:subline:value:Content example teaser subline
+
+# Name 
+# Name component (i.e. "component:polopoly.Content:name") has a shortcut
+name:Content example teaser name
+
+# Content references 
+# ref:<group>:<name>:<referred_external_id>
+# Teaser does not have any "single" content references. 
+# A page could have "ref:pageLayout:selected:np.it.FlexiblePageLayout"
+
+# Content Lists
+# Add references to other content in content lists of this content
+# Parameters are: group (optional unless reference metadata is provided), referred content, reference metadata (optional).
+# * NB! pcmd inspect currently prints ref and ref metadata in opposite order!
+# list:<referred_external_id> (Adds to default content list: group=polopoly.Department if Major=Department, polopoly.Toc if Major=Article or Layout Element)
+# list:<list_name>:<referred_external_id>
+# list:<list_name>:<referred_external_id>:<ref_metadata_external_id>
+# NB List is cleared.
+list:images:np.ct.import.test.terminator.image:content-example-teaser-externalid-image-refmetadata
+list:moduleMetadata/taxonomy[np.catdimension.infotyp]:np.cat.infotyp.teaser
+
+# Publish
+# To publish this content in a content list of another content.
+# Parameters are (similar to "list"): 
+#   group (optional unless reference metadata is provided), content to publish in, reference metadata (optional)
+# publish:<external_id_to_publish_in> (Publishes in default content list)
+# publish:<list_name>:<external_id_to_publish_in>
+# publish:<list_name>:<external_id_to_publish_in>:<ref_metadata_external_id>
+# NB 1: List is NOT cleared.
+# NB 2: Publish is not inherited when using 'template'
+
+
+# Image ref metadata content ------------------------------
+id:content-example-teaser-externalid-image-refmetadata
+major:13
+inputtemplate:np.it.metadata.MediaAssetseRefMeta
+securityparent:content-example-teaser-externalid
+name:content-example-teaser-externalid-image-refmetadata
+component:label:value:Ref meta data Label
+ref:polopoly.ReferenceMetaData:referredId:np.ct.import.test.terminator.image
+
+
+# Templating ----------------------------------------------
+# You can create content using another content as template. 
+# Here is a second teaser where only name (and externalid of course) differs
+id:content-example-teaser-2-externalid
+template:content-example-teaser-externalid
+name:Content example teaser 2 name
+# NB : 'publish' is not inherited when using 'template'
+
+# Images --------------------------------------------------
+id:.image.Marcus_Frankrike.jpg
+inputtemplate:np.it.module.Image
+securityparent:np.ct.prosieben.de.d
+name:Content example Image Marcus Frankrike 
+component:author:value:Test example author
+component:caption:value:Test example Caption
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Example Image
+component:moduleMetadata/friendlyURL:value:test-example-image
+component:p.ImageManager/namespaces:httpImage:httpImage
+component:p.ImageManager/namespaces:image:image
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+file:Marcus_Frankrike.jpg:files/Marcus_Frankrike.jpg
+
+# --- This can be used as a template for content ---
+#id:
+#major:
+#inputtemplate:
+#securityparent:
+#name:
+#component:
+#ref:
+#file:
+#list:
+#publish:
+# -------------------------------------------------

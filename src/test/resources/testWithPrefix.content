@@ -1,0 +1,7 @@
+id:.relatedGalleriesSlotTemplates
+major:Department
+inputtemplate:p.TemplateRoot
+securityparent:p.TemplateDepartment
+name:SZ Article Templates
+publish:p.TemplateDepartment
+list:relatedGalleriesSlotTemplates.gallery

@@ -1,0 +1,20 @@
+# defining a test videooverview home site using the already existant Logowall Test Site
+id:.
+inputtemplate:p.siteengine.Page
+securityparent:test.site.prosiebende.logowall
+name:Test Videooverview Page
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Videooverview Home
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.VideoPageOverviewFormatLayout
+list:modulesFreeTexts:.freetextbox
+
+# defining a test freetextbox
+id:.freetextbox
+inputtemplate:np.it.module.FreeText
+securityparent:.
+name:Ich bin die Überschrift von der Textbox
+component:text:value:Und ich bin der Text der Textbox

@@ -1,0 +1,21 @@
+id:relatedGalleriesSlotTemplates
+major:Department
+inputtemplate:p.TemplateRoot
+securityparent:p.TemplateDepartment
+name:SZ Article Templates
+publish:p.TemplateDepartment
+list:relatedGalleriesSlotTemplates.gallery
+
+id:relatedGalleriesSlotTemplates.gallery
+major:Department
+component:polopoly.Client:categoryMajor:Article
+inputtemplate:p.TemplateCategory
+#test comment
+securityparent:relatedGalleriesSlotTemplates
+name:Article
+component:author:value:Emily Malone
+ref:polopoly.InputTemplate.Subtemplates:2048:13.742
+ref:elements/slotElements:example.demo.article.WorkingFromHome.Comments
+
+
+hola esto es una prueba

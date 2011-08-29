@@ -1,0 +1,151 @@
+# defining a test prosieben site
+# this is a comment
+id:.nombre
+inputtemplate:
+securityparent:p.siteengine.Sites.d
+name:Logowall Test Site
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Home
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.FlexiblePageLayout
+list:rowlist:.logowallrow
+
+# defining a test formatpage
+id:.sendungen.logowall.formatpage
+inputtemplate:p.siteengine.Page
+securityparent:np.ct.prosieben.de.sendungen.d
+name:Logowall Test Format Page
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Logowall Test Format Page
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.Flexible2ColumnPageLayout
+publish:np.ct.prosieben.de.sendungen.d
+list:singleBroadcastHighlightList:.broadcasthighlight.formatpage.logowalltest
+list:singleInternalLinkList:.sendungen.logowall.videoplayerpage
+
+# defining broadcasthighlight elements
+id:.broadcasthighlight.formatpage.logowalltest
+inputtemplate:np.it.module.broadcast.Highlight
+securityparent:.sendungen.logowall.formatpage
+name: Test Logowall Formatpage Broadcasthighlight
+component:airtimeGroup:airtimeTimeHours:1
+component:airtimeGroup:airtimeTimeMinutes:1
+component:airtimeGroup:airtimeMonday:true
+component:airtimeGroup:airtimeTuesday:false
+component:airtimeGroup:airtimeWednesday:false
+component:airtimeGroup:airtimeThursday:false
+component:airtimeGroup:airtimeFriday:false
+component:airtimeGroup:airtimeSaturday:false
+component:airtimeGroup:airtimeSunday:false
+component:airtimeGroup:ontime:01\.01\.2010, 12\:00
+component:airtimeGroup:offtime:01\.01\.2020, 12\:00
+list:broadcastHighlightThumbnail:np.ct.import.test.terminator.image
+
+# defining a test videoplayerpage
+id:.sendungen.logowall.videoplayerpage
+inputtemplate:np.it.module.VideoPlayerPage
+securityparent:.sendungen.logowall.formatpage
+name:Test Logowall Videoplayerpage
+
+# defining a test Logowall row
+id:.logowallrow
+#inputtemplate:np.it.clw.flexiblelayout.Layouts
+inputtemplate:np.it.layout.flexible.2rows5columns13
+securityparent:.
+name:Test LogowallRow
+list:slot1/slotElements:.logowallmodul
+
+# defining a test 3x2-module "Logowall"
+id:.logowallmodul
+inputtemplate:np.it.module.LogoWall
+securityparent:.
+name:Test Logowallmodule
+list:logoWallItemContentList:.logowallitem.1
+list:logoWallItemContentList:.logowallitem.2
+list:logoWallItemContentList:.logowallitem.3
+list:logoWallItemContentList:.logowallitem.4
+list:logoWallItemContentList:.logowallitem.5
+list:logoWallItemContentList:.logowallitem.6
+list:logoWallItemContentList:.logowallitem.7
+list:logoWallItemContentList:.logowallitem.8
+list:logoWallItemContentList:.logowallitem.9
+list:logoWallItemContentList:.logowallitem.10
+list:logoWallItemContentList:.logowallitem.11
+list:logoWallItemContentList:.logowallitem.12
+list:logoWallItemContentList:.logowallitem.13
+list:logoWallItemContentList:.logowallitem.14
+list:logoWallItemContentList:.logowallitem.15
+list:logoWallItemContentList:.logowallitem.16
+
+# defining logowall items
+id:.logowallitem.1
+inputtemplate:np.it.module.logowall.logowallitem
+securityparent:.logowallmodul
+name:Test Logowall Item 1
+list:singleInternalLinkList:.sendungen.logowall.formatpage
+
+id:.logowallitem.2
+template:.logowallitem.1
+name:Test Logowall Item 2
+
+id:.logowallitem.3
+template:.logowallitem.1
+name:Test Logowall Item 3
+
+id:.logowallitem.4
+template:.logowallitem.1
+name:Test Logowall Item 4
+
+id:.logowallitem.5
+template:.logowallitem.1
+name:Test Logowall Item 5
+
+id:.logowallitem.6
+template:.logowallitem.1
+name:Test Logowall Item 6
+
+id:.logowallitem.7
+template:.logowallitem.1
+name:Test Logowall Item 7
+
+id:.logowallitem.8
+template:.logowallitem.1
+name:Test Logowall Item 8
+
+id:.logowallitem.9
+template:.logowallitem.1
+name:Test Logowall Item 9
+
+id:.logowallitem.10
+template:.logowallitem.1
+name:Test Logowall Item 10
+
+id:.logowallitem.11
+template:.logowallitem.1
+name:Test Logowall Item 11
+
+id:.logowallitem.12
+template:.logowallitem.1
+name:Test Logowall Item 12
+
+id:.logowallitem.13
+template:.logowallitem.1
+name:Test Logowall Item 13
+
+id:.logowallitem.14
+template:.logowallitem.1
+name:Test Logowall Item 14
+
+id:.logowallitem.15
+template:.logowallitem.1
+name:Test Logowall Item 15
+
+id:.logowallitem.16
+template:.logowallitem.1
+name:Test Logowall Item 16

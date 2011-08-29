@@ -1,0 +1,14 @@
+# This file creates test content for the linkatory links importer. 
+# this the otther line
+
+# test content page
+id:test.workflow.aware.content
+inputtemplate:np.it.module.ContentPage
+securityparent:p.siteengine.Sites.d
+name:content where the linkatory link should be added - workflow aware
+
+# test department
+id:test.workflow.unaware.content
+inputtemplate:p.siteengine.Page
+securityparent:p.siteengine.Sites.d
+name:content where the linkatory link should be added- workflow unaware

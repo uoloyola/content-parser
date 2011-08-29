@@ -1,0 +1,97 @@
+# VideoEpisodePagePolicySystemTest and VideoEpisodeClipsPolicySystemTest test content
+
+id:test.videoEpisodePage
+inputtemplate:np.it.module.VideoEpisodePage
+securityparent:test.page.sendung.format.1
+name:Test VideoEpisodePage 
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:episodedescription:value:The test epsiode is a real killer!
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test VideoEpisodePage
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+list:fullEpisodeQueue:test.videoPlayerPages.prosieben.1
+list:modulesVideoEpisodeClipsContent:.videoEpisodeClips
+list:modulesVideoEpisodeClipsContent:.videoEpisodeClips.v2.search
+list:modulesVideoEpisodeClipsContent:.videoEpisodeClips.empty
+
+id:.videoEpisodeClips.empty
+inputtemplate:np.it.module.video.VideoEpisodeClips
+securityparent:test.videoEpisodePage
+name:Test VideoEpisodePage VideoEpisodeClips Empty
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test VideoEpisodeClips
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+
+id:.videoEpisodeClips
+template:.videoEpisodeClips.empty
+name:Test VideoEpisodePage VideoEpisodeClips
+list:publishingQueue:test.videoPlayerPages.prosieben.1
+list:publishingQueue:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb
+
+id:.videoEpisodeClips.v2.empty
+inputtemplate:np.it.module.video.VideoEpisodeClips_v2
+securityparent:test.videoEpisodePage
+name:Test VideoEpisodePage VideoEpisodeClips v2 Empty
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test v2 VideoEpisodeClips
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+
+id:.videoEpisodeClips.v2.search
+template:.videoEpisodeClips.v2.empty
+name:Test VideoEpisodePage VideoEpisodeClips v2 Searchbased
+list:publishingQueue:.pq.search.videopageplayer
+
+id:.videoEpisodeClips.v2.manual
+template:.videoEpisodeClips.v2.empty
+name:Test VideoEpisodePage VideoEpisodeClips v2
+list:publishingQueue:.pq.manual.videoPlayerPage
+
+id:.sub-page
+inputtemplate:p.siteengine.Page
+securityparent:test.page.sendung.format.1
+name:Test VideoEpisodePage sendung sub-page
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test sub-page
+ref:pageLayout:selected:np.it.VideoEpisodeOverviewPageLayout
+list:articles:test.videoEpisodePage
+list:modulesBigTeaser:.bigteaser
+publish:test.page.sendung.format.1
+
+id:.bigteaser
+inputtemplate:np.it.module.BigTeaser
+securityparent:.sub-page
+name:Test VideoEpisodePage (Multitheme) BigTeaser
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Bigteaser
+list:queueList:.bigteaser.pq
+
+id:.bigteaser.pq
+inputtemplate:np.it.pq.manual.bigTeaser
+securityparent:.bigteaser
+name:Test VideoEpisodePage BigTeaser PQ
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test Bigteaser PQ
+list:test.videoPlayerPages.prosieben.1
+
+id:.pq.search.videopageplayer
+inputtemplate:np.it.pq.search.videopageplayer
+securityparent:.videoEpisodeClips.v2.search
+name:Test VideoEpisodePage VideoPlayerPage Search PQ
+component:sortOrder:value:de.netpioneer.sim.collection.search.SearchResultSorterCreationTime
+component:timeSpan:value:180
+component:default/lock:value:false
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Test VideoPlayerPage Search PQ
+list:categorization[np.catdimension.brand]:np.cat.brand.prosieben
+
+id:.pq.manual.videoPlayerPage
+inputtemplate:np.it.pq.manual.bigTeaser
+securityparent:.videoEpisodeClips.v2.manual
+name:Test VideoEpisodePage VideoPlayerPage Manual PQ
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value: Test VideoPlayerPage Manual PQ
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.fullEpisode.shows.videodb

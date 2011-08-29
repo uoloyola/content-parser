@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>se.ubaldo</groupId>
+	<artifactId>content-parser</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<issueManagement>
+	</issueManagement>
+	<scm>
+		<url>https://uoloyola@github.com/uoloyola/content-parser.git</url>
+	</scm>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.polopoly.ps.contentformat.Main</mainClass>
+							<packageName>com.polopoly.ps.contentformat</packageName>
+						</manifest>
+						<manifestEntries>
+							<mode>development</mode>
+							<url>${pom.url}</url>
+							<key>value</key>
+						</manifestEntries>
+					</archive>
+				</configuration>
+
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+	</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.googlecode.guice-junit4</groupId>
+			<artifactId>guice-junit4-core</artifactId>
+			<version>0.2</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

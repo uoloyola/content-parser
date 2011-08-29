@@ -1,0 +1,9 @@
+id:.page
+inputtemplate:p.siteengine.Page
+securityparent:np.ct.prosieben.de.d
+name:Pro7CalendarPreviewUrlBuilderSystemTest Page
+
+id:.teaserSpot
+inputtemplate:np.it.layout.TeaserSpot
+securityparent:np.ct.prosieben.de.d
+name:Pro7CalendarPreviewUrlBuilderSystemTest TeaserSpot

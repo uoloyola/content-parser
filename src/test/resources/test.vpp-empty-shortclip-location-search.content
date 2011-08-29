@@ -1,0 +1,15 @@
+# This file creates test video player pages which can be used for system tests of
+# VPP empty short clip location search tool.
+
+# VPP Test 1 with shortClipLocation
+id:np.ct.import.videoplayerpage.VppSearchTest1
+inputtemplate:np.it.module.VideoPlayerPage
+securityparent:p.siteengine.Sites.d
+name:pcmd vpp search test 1
+component:shortClipLocation:value:http\://www.prosieben.de/test
+
+# VPP Test 2 without shortClipLocation
+id:np.ct.import.videoplayerpage.VppSearchTest2
+inputtemplate:np.it.module.VideoPlayerPage
+securityparent:p.siteengine.Sites.d
+name:pcmd vpp search test 2

@@ -1,0 +1,23 @@
+# This file creates test video player pages which can be used for system tests of
+# video player page short clip location updater tool.
+
+# VPP Test 1
+id:np.ct.import.videoplayerpage.test1
+inputtemplate:np.it.module.VideoPlayerPage
+securityparent:p.siteengine.Sites.d
+name:pcmd vpp test 1
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+
+# VPP Test 2
+id:np.ct.import.videoplayerpage.test2
+inputtemplate:np.it.module.VideoPlayerPage
+securityparent:p.siteengine.Sites.d
+name:pcmd vpp test 2
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.prosieben
+
+# VPP Test 3
+id:np.ct.import.videoplayerpage.sixx.test3
+inputtemplate:np.it.module.VideoPlayerPage
+securityparent:p.siteengine.Sites.d
+name:pcmd vpp test 3
+list:moduleMetadata/taxonomy[np.catdimension.brand]:np.cat.brand.sixx

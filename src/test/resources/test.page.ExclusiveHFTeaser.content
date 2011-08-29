@@ -1,0 +1,179 @@
+# defining a test format page containing normal and exclusive HF teaser bookings
+id:.
+inputtemplate:p.siteengine.Page
+securityparent:np.ct.prosieben.de.sendungen.d
+name:Exclusive HF Teaser Department 1
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Exclusive HF Teaser Department 1
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.FlexiblePageLayout
+component:homeflashteasers/homeFlashTeaserMode:value:static
+list:exclusiveHomeFlashBookings:.teaserqueue.exclusive
+list:homeFlashBookings:.teaserqueue.1
+list:homeFlashBookings:.teaserqueue.2
+
+# defining a test format page containing just an empty exclusive queue
+id:.empty
+inputtemplate:p.siteengine.Page
+securityparent:np.ct.prosieben.de.sendungen.d
+name:Exclusive HF Teaser Department Empty
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Exclusive HF Teaser Department Empty
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.FlexiblePageLayout
+component:homeflashteasers/homeFlashTeaserMode:value:static
+list:exclusiveHomeFlashBookings:.teaserqueue.exclusive.empty
+
+# defining a test format page containing no exclusive queue at all
+id:.empty.2
+inputtemplate:p.siteengine.Page
+securityparent:np.ct.prosieben.de.sendungen.d
+name:Exclusive HF Teaser Department Empty 2
+component:advanced/atselected:value:true
+component:advanced/chselected:value:true
+component:advanced/deselected:value:true
+component:editableBySite:value:de
+component:moduleMetadata/breadcrumbDefaultH1Message:value:Exclusive HF Teaser Department Empty 2
+component:showinhtmlsitemap:value:false
+ref:pageLayout:selected:np.it.FlexiblePageLayout
+component:homeflashteasers/homeFlashTeaserMode:value:static
+
+#defining publishing queues for normal HF teasers
+id:.teaserqueue.1
+securityparent:np.specialPages.TeaserBookings.d
+inputtemplate:np.it.pq.content.HomeFlashTeaser
+name:Exclusive HFT Test PQ 1
+list:relativeHomeFlashTeasers:.HFTeaser.1:.HFRelativeMetadata.1
+list:relativeHomeFlashTeasers:.HFTeaser.2:.HFRelativeMetadata.2
+
+id:.teaserqueue.2
+inputtemplate:np.it.pq.content.HomeFlashTeaser
+securityparent:np.specialPages.TeaserBookings.d
+name:Exclusive HFT Test PQ 2
+list:relativeHomeFlashTeasers:.HFTeaser.2:.HFRelativeMetadata.3
+list:relativeHomeFlashTeasers:.HFTeaser.1:.HFRelativeMetadata.4
+
+id:.teaserqueue.exclusive
+inputtemplate:np.it.pq.content.HomeFlashTeaser
+securityparent:np.specialPages.TeaserBookings.d
+name:Exclusive HFT Test PQ Exclusive
+list:relativeHomeFlashTeasers:.HFTeaser.exclusive.1:.HFRelativeMetadata.exclusive.1
+list:relativeHomeFlashTeasers:.HFTeaser.exclusive.2:.HFRelativeMetadata.exclusive.2
+
+id:.teaserqueue.exclusive.empty
+inputtemplate:np.it.pq.content.HomeFlashTeaser
+securityparent:np.specialPages.TeaserBookings.d
+name:Exclusive HFT Test PQ Exclusive Empty
+
+#defining test HF teasers
+id:.HFTeaser.1
+securityparent:.
+inputtemplate:np.it.layout.HomeFlashTeaser
+name: Exclusive HFT Test HF Teaser 1
+
+id:.HFTeaser.2
+securityparent:.
+inputtemplate:np.it.layout.HomeFlashTeaser
+name: Exclusive HFT Test HF Teaser 2
+
+id:.HFTeaser.exclusive.1
+securityparent:.
+inputtemplate:np.it.layout.HomeFlashTeaser
+name: Exclusive HFT Test HF Teaser Exclusive 1
+
+id:.HFTeaser.exclusive.2
+securityparent:.
+inputtemplate:np.it.layout.HomeFlashTeaser
+name: Exclusive HFT Test HF Teaser Exclusive 2
+
+#defining Booking metadata (relative bookings)
+# Mo 0:00 - Wed 11:59
+id:.HFRelativeMetadata.1
+major:13
+inputtemplate:np.it.content.TeaserRelativeRefMeta
+securityparent:.teaserqueue.1
+name:Exclusive HFT Test HF Relative Metadata 1
+component:weekDaysRange/start:hour:0
+component:weekDaysRange/start:minute:0
+component:weekDaysRange/start:weekday:2
+component:weekDaysRange/stop:hour:11
+component:weekDaysRange/stop:minute:59
+component:weekDaysRange/stop:weekday:4
+ref:polopoly.ReferenceMetaData:referredId:.HFTeaser.1
+
+# Wed 12:00 - So 12:00
+id:.HFRelativeMetadata.2
+major:13
+inputtemplate:np.it.content.TeaserRelativeRefMeta
+securityparent:.teaserqueue.1
+name:Exclusive HFT Test HF Relative Metadata 2
+component:weekDaysRange/start:hour:12
+component:weekDaysRange/start:minute:0
+component:weekDaysRange/start:weekday:4
+component:weekDaysRange/stop:hour:23
+component:weekDaysRange/stop:minute:59
+component:weekDaysRange/stop:weekday:1
+ref:polopoly.ReferenceMetaData:referredId:.HFTeaser.2
+
+# Mo 0:00 - Wed 11:59
+id:.HFRelativeMetadata.3
+major:13
+template:.HFRelativeMetadata.1
+securityparent:.teaserqueue.2
+name:Exclusive HFT Test HF Relative Metadata 3
+ref:polopoly.ReferenceMetaData:referredId:.HFTeaser.2
+
+# Wed 12:00 - So 12:00
+id:.HFRelativeMetadata.4
+major:13
+template:.HFRelativeMetadata.2
+securityparent:.teaserqueue.2
+name:Exclusive HFT Test HF Relative Metadata 4
+ref:polopoly.ReferenceMetaData:referredId:.HFTeaser.1
+
+# Tue 12:00 - Fr 23:59
+id:.HFRelativeMetadata.exclusive.1
+major:13
+inputtemplate:np.it.content.TeaserRelativeRefMeta
+securityparent:.teaserqueue.exclusive
+name:Exclusive HFT Test HF Relative Metadata 1
+component:weekDaysRange/start:hour:12
+component:weekDaysRange/start:minute:0
+component:weekDaysRange/start:weekday:3
+component:weekDaysRange/stop:hour:23
+component:weekDaysRange/stop:minute:59
+component:weekDaysRange/stop:weekday:6
+ref:polopoly.ReferenceMetaData:referredId:.HFTeaser.exclusive.1
+
+# Sa 0:00 - Sa 23:59
+id:.HFRelativeMetadata.exclusive.2
+major:13
+inputtemplate:np.it.content.TeaserRelativeRefMeta
+securityparent:.teaserqueue.exclusive
+name:Exclusive HFT Test HF Relative Metadata 2
+component:weekDaysRange/start:hour:0
+component:weekDaysRange/start:minute:0
+component:weekDaysRange/start:weekday:7
+component:weekDaysRange/stop:hour:23
+component:weekDaysRange/stop:minute:59
+component:weekDaysRange/stop:weekday:7
+ref:polopoly.ReferenceMetaData:referredId:.HFTeaser.exclusive.2
+
+
+
+
+
+
+
+
+
+
+
+
+

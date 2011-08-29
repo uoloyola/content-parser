@@ -1,0 +1,386 @@
+## Archive Page
+id:.page
+inputtemplate:np.it.archive.Page
+securityparent:p.siteengine.Sites.d
+name:Test Archive Page
+ref:pageLayout:selected:np.it.ArchiveChannelMonthPageLayout
+list:np.ct.prosieben.de.sendungen.d
+list:np.ct.prosieben.de.kinoamp;dvd.d
+list:np.ct.prosieben.de.musik.d
+list:pages:.channelMonth.tv-2010-11
+list:pages:.channelMonth.tv-2010-10
+list:pages:.channelMonth.tv-2010-09
+list:pages:.channelMonth.tv-2010-08
+list:pages:.channelMonth.tv-2010-07
+list:pages:.channelMonth.tv-2010-06
+list:pages:.channelMonth.tv-2010-05
+list:pages:.channelMonth.tv-2010-04
+list:pages:.channelMonth.tv-2010-03
+list:pages:.channelMonth.tv-2010-02
+list:pages:.channelMonth.tv-2010-01
+list:pages:.channelMonth.tv-2009-11
+list:pages:.channelMonth.tv-2008-11
+list:pages:.channelMonth.tv-2007-11
+list:pages:.channelMonth.kinodvd-2010-11
+list:pages:.channelMonth.musik-2010-11
+list:pages:.departmentMonth.sendung.format.1.1-2010-11
+list:pages:.departmentMonth.sendung.format.1.2-2010-11
+list:pages:.departmentMonth.sendung.format.1.3-2010-11
+list:pages:.departmentMonth.sendung.format.1.4-2010-11
+list:pages:.departmentMonth.musik.1-2010-11
+list:pages:.departmentMonth.musik.2-2010-11
+list:pages:.departmentMonth.musik.3-2010-11
+list:pages:.departmentMonth.musik.4-2010-11
+list:pages:.departmentMonth.musik.5-2010-11
+list:pages:.departmentMonth.musik.6-2010-11
+list:pages:.departmentMonth.musik.7-2010-11
+list:pages:.departmentMonth.musik.8-2010-11
+
+
+## Channel Month Pages
+# Jan - Nov for channel 'tv' for 2010 - for the months list
+id:.channelMonth.tv-2010-11
+inputtemplate:np.it.archive.ChannelMonthPage
+securityparent:.page
+name:tv 11 2010
+component:month:value:11
+component:year:value:2010
+ref:pageLayout:selected:np.it.ArchiveChannelMonthPageLayout
+ref:channel:reference:np.ct.prosieben.de.sendungen.d
+ref:pageLayout/selected/months:reference:.list.months.tv-2010
+ref:pageLayout/selected/years:reference:.list.years.tv-11
+ref:pageLayout/selected/channels:reference:.list.channels.2010-11
+list:.formatDeptPQ.sendung.format.1-2010-11
+list:.formatDeptPQ.sendung.format.2-2010-11
+
+id:.channelMonth.tv-2010-10
+template:.channelMonth.tv-2010-11
+name:tv 10 2010
+component:month:value:10
+
+id:.channelMonth.tv-2010-09
+template:.channelMonth.tv-2010-11
+name:tv 09 2010
+component:month:value:09
+
+id:.channelMonth.tv-2010-08
+template:.channelMonth.tv-2010-11
+name:tv 08 2010
+component:month:value:08
+
+id:.channelMonth.tv-2010-07
+template:.channelMonth.tv-2010-11
+name:tv 07 2010
+component:month:value:07
+
+id:.channelMonth.tv-2010-06
+template:.channelMonth.tv-2010-11
+name:tv 06 2010
+component:month:value:06
+
+id:.channelMonth.tv-2010-05
+template:.channelMonth.tv-2010-11
+name:tv 05 2010
+component:month:value:05
+
+id:.channelMonth.tv-2010-04
+template:.channelMonth.tv-2010-11
+name:tv 04 2010
+component:month:value:04
+
+id:.channelMonth.tv-2010-03
+template:.channelMonth.tv-2010-11
+name:tv 03 2010
+component:month:value:03
+
+id:.channelMonth.tv-2010-02
+template:.channelMonth.tv-2010-11
+name:tv 02 2010
+component:month:value:02
+
+id:.channelMonth.tv-2010-01
+template:.channelMonth.tv-2010-11
+name:tv 01 2010
+component:month:value:01
+
+# Some other years for Nov for tv - for the years list
+id:.channelMonth.tv-2009-11
+template:.channelMonth.tv-2010-11
+name:tv 11 2009
+ref:pagelayout/selected/months:reference:.list.months.tv-2009
+ref:pagelayout/selected/channels:reference:.list.channels.2009-11
+component:year:value:2009
+
+id:.channelMonth.tv-2008-11
+template:.channelMonth.tv-2010-11
+name:tv 11 2008
+ref:pagelayout/selected/months:reference:.list.months.tv-2008
+ref:pagelayout/selected/channels:reference:.list.channels.2008-11
+component:year:value:2008
+
+id:.channelMonth.tv-2007-11
+template:.channelMonth.tv-2010-11
+name:tv 11 2007
+ref:pagelayout/selected/months:reference:.list.months.tv-2007
+ref:pagelayout/selected/channels:reference:.list.channels.2007-11
+component:year:value:2007
+
+# Some other channels for Nov 2010 - for the channels list
+id:.channelMonth.kinodvd-2010-11
+template:.channelMonth.tv-2010-11
+name:Kino DVD 11 2010
+ref:channel:reference:np.ct.prosieben.de.kinoamp;dvd.d
+ref:pagelayout/selected/months:reference:.list.months.kinodvd-2010
+ref:pagelayout/selected/years:reference:.list.years.kinodvd-11
+# No departments test case
+
+id:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.ChannelMonthPage
+securityparent:.page
+name:Musik 11 2010
+ref:pageLayout:selected:np.it.ArchiveChannelMonthPageLayout
+ref:channel:reference:np.ct.prosieben.de.musik.d
+ref:pagelayout/selected/months:reference:.list.months.musik-2010
+ref:pagelayout/selected/years:reference:.list.years.musik-11
+ref:pagelayout/selected/channels:reference:.list.channels.2010-11
+component:month:value:11
+component:year:value:2010
+
+
+## Format dept PQ:s
+id:.formatDeptPQ.sendung.format.1-2010-11
+inputtemplate:np.it.pq.manual.archive.FormatDepartment
+securityparent:.channelMonth.tv-2010-11
+name:Test Archive Format 1 TV 2010 11
+list:.departmentMonth.sendung.format.1.1-2010-11
+list:.departmentMonth.sendung.format.1.2-2010-11
+list:.departmentMonth.sendung.format.1.3-2010-11
+list:.departmentMonth.sendung.format.1.4-2010-11
+
+id:.formatDeptPQ.sendung.format.2-2010-11
+inputtemplate:np.it.pq.manual.archive.FormatDepartment
+securityparent:.channelMonth.tv-2010-11
+name:Test Archive Format 2 TV 2010 11 
+#for format dept: test.page.sendung.format.2, which do not have sub pages
+
+
+## Department Month Pages
+## NB These can template on parent Channel Month - also in implementation of generator
+# Sendung - format 1 - 2010 11 
+id:.departmentMonth.sendung.format.1.1-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:format1 department1 11 2010
+component:month:value:11
+component:year:value:2010
+ref:channel:reference:np.ct.prosieben.de.sendungen.d
+ref:department:reference:test.page.sendung.format.1.1
+ref:pageLayout:selected:np.it.ArchiveChannelMonthPageLayout
+ref:pageLayout/selected/months:reference:.list.months.tv-2010
+ref:pageLayout/selected/years:reference:.list.years.tv-11
+list:test.videoPlayerPages.sendungen.1
+list:test.videoPlayerPages.sendungen.2
+list:test.contentPage.sendungen.1.1
+list:test.videoPlayerPages.prosieben.1
+list:test.videoPlayerPages.prosieben.3
+
+id:.departmentMonth.sendung.format.1.2-2010-11
+template:.departmentMonth.sendung.format.1.1-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:format1 department2 11 2010
+ref:department:reference:test.page.sendung.format.1.2
+
+id:.departmentMonth.sendung.format.1.3-2010-11
+template:.departmentMonth.sendung.format.1.1-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:format1 department3 11 2010
+ref:department:reference:test.page.sendung.format.1.3
+
+id:.departmentMonth.sendung.format.1.4-2010-11
+template:.departmentMonth.sendung.format.1.1-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:format1 department4 11 2010
+ref:department:reference:test.page.sendung.format.1.4
+
+# Musik - 2010 11
+id:.departmentMonth.musik.1-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department1 11 2010
+ref:department:reference:test.page.musik.1
+list:test.contentPage.musik.1.1
+list:test.contentPage.musik.1.2
+list:test.contentPage.musik.1.3
+list:test.contentPage.musik.1.4
+list:test.contentPage.musik.1.5
+list:test.contentPage.musik.1.6
+list:test.contentPage.musik.1.7
+list:test.contentPage.musik.1.8
+publish:.channelMonth.musik-2010-11
+
+id:.departmentMonth.musik.2-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department2 11 2010
+ref:department:reference:test.page.musik.2
+list:test.contentPage.musik.2.1
+list:test.contentPage.musik.2.2
+list:test.contentPage.musik.2.3
+list:test.contentPage.musik.2.4
+publish:.channelMonth.musik-2010-11
+
+id:.departmentMonth.musik.3-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department3 11 2010
+ref:department:reference:test.page.musik.3
+list:test.contentPage.musik.3.1
+list:test.contentPage.musik.3.2
+publish:.channelMonth.musik-2010-11
+
+id:.departmentMonth.musik.4-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department4 11 2010
+ref:department:reference:test.page.musik.4
+publish:.channelMonth.musik-2010-11
+
+id:.departmentMonth.musik.5-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department5 11 2010
+ref:department:reference:test.page.musik.5
+list:test.contentPage.musik.3.1
+list:test.contentPage.musik.3.2
+publish:.channelMonth.musik-2010-11
+
+id:.departmentMonth.musik.6-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department6 11 2010
+ref:department:reference:test.page.musik.6
+list:test.contentPage.musik.3.1
+list:test.contentPage.musik.3.2
+publish:.channelMonth.musik-2010-11
+
+id:.departmentMonth.musik.7-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department7 11 2010
+ref:department:reference:test.page.musik.7
+list:test.contentPage.musik.3.1
+list:test.contentPage.musik.3.2
+publish:.channelMonth.musik-2010-11
+
+id:.departmentMonth.musik.8-2010-11
+template:.channelMonth.musik-2010-11
+inputtemplate:np.it.archive.DepartmentMonthPage
+securityparent:.page
+name:musik department8 11 2010
+ref:department:reference:test.page.musik.8
+list:test.contentPage.musik.3.1
+list:test.contentPage.musik.3.2
+publish:.channelMonth.musik-2010-11
+
+
+## List Elements
+id:.list.months.tv-2010
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Month List TV 2010
+ref:polopoly.Toc:1:.channelMonth.tv-2010-01
+ref:polopoly.Toc:2:.channelMonth.tv-2010-02
+ref:polopoly.Toc:3:.channelMonth.tv-2010-03
+ref:polopoly.Toc:4:.channelMonth.tv-2010-04
+ref:polopoly.Toc:5:.channelMonth.tv-2010-05
+ref:polopoly.Toc:6:.channelMonth.tv-2010-06
+ref:polopoly.Toc:7:.channelMonth.tv-2010-07
+ref:polopoly.Toc:8:.channelMonth.tv-2010-08
+ref:polopoly.Toc:9:.channelMonth.tv-2010-09
+ref:polopoly.Toc:10:.channelMonth.tv-2010-10
+ref:polopoly.Toc:11:.channelMonth.tv-2010-11
+
+id:.list.years.tv-11
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Year List TV Nov
+ref:polopoly.Toc:2007:.channelMonth.tv-2007-11
+ref:polopoly.Toc:2008:.channelMonth.tv-2008-11
+ref:polopoly.Toc:2009:.channelMonth.tv-2009-11
+ref:polopoly.Toc:2010:.channelMonth.tv-2010-11
+
+id:.list.channels.2010-11
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Channel List Nov 2010
+ref:polopoly.Toc:tv:.channelMonth.tv-2010-11
+ref:polopoly.Toc:kinodvd:.channelMonth.kinodvd-2010-11
+ref:polopoly.Toc:musik:.channelMonth.musik-2010-11
+
+id:.list.departments.2010-11
+inputtemplate:np.it.archive.List
+securityparent:.channelMonth.musik-2010-11
+name:Test Archive Department List Musik 1 Nov 2010
+# Can we solve this by rendering all departments under security parent except current and have no explicit references here 
+
+# Empty lists other years
+id:.list.months.tv-2009
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Month List TV 2009
+
+id:.list.months.tv-2008
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Month List TV 2008
+
+id:.list.months.tv-2007
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Month List TV 2007
+
+id:.list.channels.2009-11
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Channel List Nov 2009
+
+id:.list.channels.2008-11
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Channel List Nov 2008
+
+id:.list.channels.2007-11
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Channel List Nov 2007
+
+# Empty lists other channels
+id:.list.months.kinodvd-2010
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Month List Kino DVD 2010
+
+id:.list.years.kinodvd-11
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Year List Kino DVD Nov
+
+id:.list.months.musik-2010
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Month List Musik 2010
+
+id:.list.years.musik-11
+inputtemplate:np.it.archive.List
+securityparent:.page
+name:Test Archive Year List Musik Nov
