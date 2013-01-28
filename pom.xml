@@ -8,6 +8,7 @@
 	</issueManagement>
 	<scm>
 		<url>https://uoloyola@github.com/uoloyola/content-parser.git</url>
+		<developerConnection>scm:git:git://github.com/uooyola/content-parser.git</developerConnection>
 	</scm>
 	<build>
 		<plugins>
