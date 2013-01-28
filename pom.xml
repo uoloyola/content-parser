@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>se.ubaldo</groupId>
 	<artifactId>content-parser</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<issueManagement>
 	</issueManagement>
 	<scm>
@@ -11,6 +11,44 @@
 	</scm>
 	<build>
 		<plugins>
+
+
+
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-plugin</artifactId>
+         <dependencies>
+            <dependency>
+               <groupId>org.codehaus.plexus</groupId>
+               <artifactId>plexus-utils</artifactId>
+               <version>2.1</version>
+            </dependency>
+            <dependency>
+               <groupId>org.apache.maven.scm</groupId>
+               <artifactId>maven-scm-provider-gitexe</artifactId>
+               <version>1.2</version>
+           </dependency>
+         </dependencies>
+        <version>1.8.1</version>
+        <configuration>
+          <connectionType>connection</connectionType>
+        </configuration>
+        <executions>
+          <execution>
+          <id>tag</id>
+          <phase>deploy</phase>
+          <goals>
+            <goal>tag</goal>
+          </goals>
+          </execution>
+        </executions>
+       </plugin>
+
+
+
+
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -31,7 +69,10 @@
 				</configuration>
 
 			</plugin>
-
+			<plugin>
+        			<artifactId>maven-release-plugin</artifactId>
+        			<version>2.4</version>
+      			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
