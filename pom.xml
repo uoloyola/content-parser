@@ -5,6 +5,11 @@
 	<version>0.0.4-SNAPSHOT</version>
 	<issueManagement>
 	</issueManagement>
+
+	<properties>
+    	<project.scm.id>polopolyps.github.server</project.scm.id>
+	</properties>
+
 	<scm>
 		<url>https://uoloyola@github.com/uoloyola/content-parser.git</url>
 		<developerConnection>scm:git:https://github.com/uoloyola/content-parser.git</developerConnection>
