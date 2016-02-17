@@ -1,3 +1,6 @@
 language: java
 script:
   mvn clean install
+after_failure:
+  - cat target/surefire-reports/*.txt
+  - cat pcmd/target/surefire-reports/*.txt
