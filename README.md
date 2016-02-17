@@ -2,7 +2,6 @@
 Create content xml files from a .content
 
 
-
-![alt text](https://travis-ci.org/uoloyola/content-parser.svg?branch=master)
+[![Build Status](https://travis-ci.org/uoloyola/content-parser.svg?branch=master)](https://travis-ci.org/uoloyola/content-parser)
 
 ## Example
