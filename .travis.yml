@@ -1,2 +1,6 @@
-language: java
-mvn clean install
+jdk:
+ - openjdk6
+script:
+mvn install
+after_success:
+after_failure:
