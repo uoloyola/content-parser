@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>se.ubaldo</groupId>
 	<artifactId>content-parser</artifactId>
-	<version>0.0.5</version>
+	<version>0.0.6-SNAPSHOT</version>
 	<issueManagement>
 	</issueManagement>
 
@@ -13,7 +13,7 @@
 	<scm>
 		<url>https://uoloyola@github.com/uoloyola/content-parser.git</url>
 		<developerConnection>scm:git:https://github.com/uoloyola/content-parser.git</developerConnection>
-    <tag>content-parser-0.0.5</tag>
+    <tag>HEAD</tag>
   </scm>
 	<build>
 		<plugins>
